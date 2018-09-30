@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <package name="ssm.pojo"/>
+    </typeAliases>
+    <!--以下内容需要修改：数据库url、用户名、密码以及mapper信息-->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="jdbc:mysql://host:(port)3306/db_name?characterEncoding=UTF-8" />
+                <property name="username" value="user_name"/>
+                <property name="password" value="password"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="mapper/AddressMapper.xml"/>
+        <mapper resource="mapper/BoxesMapper.xml"/>
+        <mapper resource="mapper/DataMapper.xml"/>
+        <mapper resource="mapper/SensorsMapper.xml"/>
+        <mapper resource="mapper/VideoMapper.xml"/>
+    </mappers>
+</configuration>
